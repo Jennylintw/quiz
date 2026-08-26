@@ -57,13 +57,17 @@ button{font-family:inherit;cursor:pointer}
   padding:17px 20px;transition:background .15s, transform .12s;
   box-shadow:0 10px 22px -12px rgba(239,138,42,.9);
 }
-.btn:hover{background:var(--brand-deep);color:#FFF}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{background:var(--brand-deep);color:#FFF}
+}
 .btn:active{transform:scale(.985)}
 .btn-ghost{
   background:transparent;color:var(--ink-2);border:1px solid var(--line);
   font-size:15px;font-weight:500;padding:14px 20px;box-shadow:none;
 }
-.btn-ghost:hover{background:var(--tint);color:var(--ink);border-color:var(--tint-2)}
+@media (hover:hover) and (pointer:fine){
+  .btn-ghost:hover{background:var(--tint);color:var(--ink);border-color:var(--tint-2)}
+}
 
 .screen{display:none;animation:rise .45s cubic-bezier(.2,.7,.3,1) both}
 .screen.on{display:block}
@@ -133,13 +137,19 @@ button{font-family:inherit;cursor:pointer}
   padding:16px 18px;color:var(--ink);font-size:15.5px;line-height:1.7;
   transition:border-color .15s, background .15s, transform .12s;
 }
-.opt:hover{border-color:var(--brand);background:var(--tint)}
+/* hover 只給真的有滑鼠的裝置。手機上 :hover 會「黏」在剛剛點過的位置，
+   換到下一題時同位置的選項會被染成橘底，看起來像預先幫使用者選好了。 */
+@media (hover:hover) and (pointer:fine){
+  .opt:hover{border-color:var(--brand);background:var(--tint)}
+}
 .opt:active{transform:scale(.99)}
 .opt .dot{
   width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink-3);
   margin-top:4px;position:relative;transition:border-color .15s;
 }
-.opt:hover .dot{border-color:var(--brand-deep)}
+@media (hover:hover) and (pointer:fine){
+  .opt:hover .dot{border-color:var(--brand-deep)}
+}
 .opt.picked{border-color:var(--brand);background:var(--tint)}
 .opt.picked .dot{border-color:var(--brand-deep)}
 .opt.picked .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--brand-deep)}
@@ -148,7 +158,9 @@ button{font-family:inherit;cursor:pointer}
   background:none;border:none;color:var(--ink-3);font-size:14px;
   padding:8px 14px;letter-spacing:.06em;
 }
-.qnav button:hover{color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .qnav button:hover{color:var(--ink)}
+}
 .qnav button[disabled]{opacity:.3;cursor:default}
 
 /* ================= 結果 ================= */
@@ -247,7 +259,10 @@ button{font-family:inherit;cursor:pointer}
   border-radius:11px;padding:14px;font-size:15px;font-weight:700;letter-spacing:.06em;
   transition:background .15s,color .15s;
 }
-.copybtn:hover,.copybtn.done{background:var(--brand);color:var(--ink)}
+.copybtn.done{background:var(--brand);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .copybtn:hover{background:var(--brand);color:var(--ink)}
+}
 
 .line-cta{
   background:var(--tint);border:1px solid var(--tint-2);border-radius:var(--r);
@@ -277,7 +292,9 @@ button{font-family:inherit;cursor:pointer}
   border-radius:12px;padding:16px 20px;font-size:17px;font-weight:700;letter-spacing:.04em;
   transition:filter .15s;
 }
-.line-btn:hover{filter:brightness(.94)}
+@media (hover:hover) and (pointer:fine){
+  .line-btn:hover{filter:brightness(.94)}
+}
 .line-btn svg{width:22px;height:22px;flex:none}
 .line-id{display:block;margin-top:12px;font-size:13px;color:var(--ink-3);letter-spacing:.1em}
 
